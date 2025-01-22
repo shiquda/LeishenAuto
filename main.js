@@ -12,7 +12,7 @@ async function start(account_token) {
 
         if (res.data.code !== 0) {
             if (res.data.code === 400803) { // 400803 - 账号已经停止加速，请不要重复操作
-                console.warn('🟡 400803 - 账号已经停止加速，请不要重复操作');
+                console.warn(`🟡雷神加速器暂停成功: ${res.data.code} - ${res.data.msg}`);
                 return;
             }
             console.error(`🔴雷神加速器暂停失败: ${res.data.code} - ${res.data.msg}`);
