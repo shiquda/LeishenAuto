@@ -16,14 +16,14 @@ async function start(account_token) {
                 return;
             }
             console.error(`🔴雷神加速器暂停失败: ${res.data.code} - ${res.data.msg}`);
-            process.exit(1);
+            process.exit(1); // 非零退出码可以让 GitHub Action 失败
         }
 
         console.log(res.data.code + ':' + res.data.msg);
         console.log('🌀雷神加速器暂停助手 成功-------')
     } catch (error) {
         console.error('🔴雷神加速器暂停失败:', error.message);
-        process.exit(1); // 非零退出码会让 GitHub Action 失败
+        process.exit(1);
     }
 
     console.log('🌀雷神加速器暂停助手 结束运行-------')
