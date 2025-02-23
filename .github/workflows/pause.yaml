@@ -22,4 +22,6 @@ jobs:
         run: |
           node main.js
         env:
-          LEISHEN_ACCOUNT_TOKEN: ${{ secrets.LEISHEN_ACCOUNT_TOKEN }}
+          ACCOUNT_TOKEN: ${{ secrets.LEISHEN_ACCOUNT_TOKEN }}
+          TOKEN: ${{ secrets.LEISHEN_TOKEN }}
+          DEVICE_ID: ${{ secrets.LEISHEN_DEVICE_ID }}

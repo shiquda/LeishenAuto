@@ -29,9 +29,11 @@
 ![new-secret.png](https://s2.loli.net/2025/01/22/ZLcmqzhpMUPBODf.png)
 ![add-secret](https://s2.loli.net/2025/01/23/C9EdjuWvQDsgRGl.png)
 
-- LEISHEN_ACCOUNT_TOKEN 账户Token
+- LEISHEN_ACCOUNT_TOKEN：账户Token（在 Local Storage 中的 account_token）
+- LEISHEN_TOKEN：请求头认证Token（在 Local Storage 中的 token）
+- LEISHEN_DEVICE_ID：设备ID（在 Local Storage 中的 deviceId，格式类似：XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）
 
-配置好 account_token
+配置好以上三个环境变量
 
 ###  3. 启用 Actions
 
