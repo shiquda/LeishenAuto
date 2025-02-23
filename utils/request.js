@@ -22,7 +22,7 @@ const getConfig = () => ({
 
 const service = axios.create({
     baseURL: process.env.VUE_APP_BASE_API || "https://webapi.xxghh.biz", // 新的移动端 API 地址
-    timeout: 5000, // request timeout
+    timeout: 30000, // request timeout
     headers: {
         'busi_type': 'nn_aksjfdasoifnkls',
         'appId': 'nnMobile_d0k3duup',
@@ -42,7 +42,7 @@ service.interceptors.request.use(
     config => {
         // 获取当前配置
         const currentConfig = getConfig();
-        
+
         // 添加动态 headers
         config.headers['deviceId'] = currentConfig.deviceId;
         config.headers['version'] = currentConfig.version;
@@ -50,13 +50,13 @@ service.interceptors.request.use(
         config.headers['latitude'] = currentConfig.latitude;
         config.headers['longitude'] = currentConfig.longitude;
         config.headers['User-Agent'] = currentConfig.userAgent;
-        
+
         // 添加时间戳
         config.headers['timeStamp'] = Math.floor(Date.now() / 1000);
-        
+
         // 添加 token 到请求头
         config.headers['token'] = process.env.TOKEN;
-        
+
         return config;
     },
     error => {
